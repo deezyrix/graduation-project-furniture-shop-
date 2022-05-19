@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/icon.png">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;600;700&family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <title>Wismebel</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="js/ajax.js"></script>
+
+
+    <meta name="description" content="">
+    <link rel="stylesheet"  href="src/css/lightslider.css"/>
+    <script src="src/js/lightslider.js"></script> 
+    <script>
+    	 $(document).ready(function() {
+			$("#content-slider").lightSlider({
+                loop:true,
+                keyPress:true
+            });
+            $('#image-gallery').lightSlider({
+                gallery:true,
+                item:1,
+                thumbItem:9,
+                slideMargin: 0,
+                speed:500,
+                auto:true,
+                loop:true,
+                onSliderLoad: function() {
+                    $('#image-gallery').removeClass('cS-hidden');
+                }  
+            });
+		});
+    </script>
+
+<style>
+    ul{
+        list-style: none outside none;
+        padding-left: 0;
+        margin: 0;
+    }
+    .demo .item{
+        margin-bottom: 60px;
+    }
+    .content-slider li{
+        background-color: #ed3020;
+        text-align: center;
+        color: #FFF;
+    }
+    .content-slider h3 {
+        margin: 0;
+        padding: 70px 0;
+    }
+    .demo{
+        width: 800px;
+    }
+</style>
+
+</head>
+
+<body>
+
+    <header>
+
+        <div class="header__menu position__middle">
+            <div class="header__menu__logo">W I S M E B E L</div>
+            <nav>
+                <a class="header__menu__nav" href="#">ГЛАВНАЯ</a>
+                <a class="header__menu__nav" href="#">О НАС</a>
+                <a class="header__menu__nav" href="#">КАТЕГОРИИ</a>
+                <a class="header__menu__nav" href="#">СВЯЗЬ</a>
+            </nav>
+            <div class="header__menu__phone">
+                <div class="header__menu__phone__text">+79022222222</div>
+                <div class="header__menu__phone__img"><img src="img/headerphone.png"></div>
+            </div>                        
+        </div>
+        
+    </header>
+
+    <div class="intro"></div>
+
+    <main>
+        <div class="about">
+            <div class="about__yellow">
+                <div class="about__yellow__content position__middle heading">НЕМНОГО О НАС</div>
+            </div>
+            <div class="about__white">
+                <div class="about__white__content position__middle">
+                    <div class="about__white__content__head heading">О ПРОДУКЦИИ НАШЕЙ КОМПАНИИ</div>
+                    <div class="about__white__content__text">Мы гарантируем адекватные цены на мебель, высокое качество материалов, широкую линейку стилей от классики до лофта и удобство покупки без лишней траты времени. Wismebel — лучшее место покупки мебели.
+                        <br><br>Собственное производство позволяет нам открыто заявить, что мы отвечаем за каждый предмет мебели, который ушёл с нашего конвеера. Мы сами конструируем модели мебели, ориентируясь на запросы клиента.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="production">
+            <div class="production__goods">
+                <div class="production__goods__content position__middle">
+                    <div class="production__goods__content__head heading"><p class="position__middle">ПРОДУКЦИЯ</p></div>
+                    <div class="production__goods__content__goods">
+
+                        <div class="goods__block">
+                            <div class="goods__block__image"><img src="img/mebel/1.jpg"></div>
+                            <div class="goods__block__text">Кровати</div>
+                        </div>
+                        <div class="goods__block">
+                            <div class="goods__block__image"><img src="img/mebel/2.jpg"></div>
+                            <div class="goods__block__text">Столы и стулья</div>
+                        </div>
+                        <div class="goods__block">
+                            <div class="goods__block__image"><img src="img/mebel/3.jpg"></div>
+                            <div class="goods__block__text">Детские</div>
+                        </div>
+                        <div class="goods__block">
+                            <div class="goods__block__image"><img src="img/mebel/4.jpg"></div>
+                            <div class="goods__block__text">Спальни</div>
+                        </div>
+                        <div class="goods__block">
+                            <div class="goods__block__image"><img src="img/mebel/5.jpg"></div>
+                            <div class="goods__block__text">Мягкая мебель</div>
+                        </div>
+                        <div class="goods__block">
+                            <div class="goods__block__image"><img src="img/mebel/6.jpg"></div>
+                            <div class="goods__block__text">Комоды</div>
+                        </div>
+                        <div class="goods__block">
+                            <div class="goods__block__image"><img src="img/mebel/7.jpg"></div>
+                            <div class="goods__block__text">Кухни</div>
+                        </div>
+                        <div class="goods__block">
+                            <div class="goods__block__image"><img src="img/mebel/8.jpg"></div>
+                            <div class="goods__block__text">Гостинные</div>
+                        </div>
+                        <div class="goods__block goods__block_9">
+                            <div class="goods__block__image"><img src="img/mebel/9.jpg"></div>
+                            <div class="goods__block__text">Остальное</div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="production__image"></div>
+        </div>
+
+        <div class="gallery">
+
+            <div class="gallery__sign">
+                <div class="gallery__sign__head position__middle heading">ГАЛЕРЕЯ</div>
+            </div>
+
+            
+
+            <div class="gallery__slider">
+
+                <div class="item">
+                    <ul id="content-slider" class="content-slider">
+                        <li>
+                            <h3>1</h3>
+                        </li>
+                        <li>
+                            <h3>2</h3>
+                        </li>
+                        <li>
+                            <h3>3</h3>
+                        </li>
+                        <li>
+                            <h3>4</h3>
+                        </li>
+                        <li>
+                            <h3>5</h3>
+                        </li>
+                        <li>
+                            <h3>6</h3>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="gallery__button"> </div>
+
+        </div>
+
+        <div class="callme">
+            <div class="callme__picture"></div>
+            <div class="callme__yellow">
+                <form class="callme__yellow__inner position__middle" action="callme.php" method="POST">
+                    <div class="callme__yellow__inner__head"><div class="callme__yellow__inner__head__content heading">ЕСТЬ ВОПРОСЫ?</div></div>
+                    <div class="callme__yellow__inner__forms">
+                        <div class="callme__yellow__inner__forms__form">
+                            <input required type="text" name="callme_name" class="callme__yellow__inner__forms__form__input" placeholder="Ваше имя" pattern="^[А-Яа-яЁё]+$" title="Используйте кириллические буквы">
+                            <!--<label for="" class="callme__yellow__inner__forms__form__label">Ваше имя</label>-->
+                        </div>
+
+                        <div class="callme__yellow__inner__forms__form separator"><!--Разделитель между формами--></div>
+
+                        <div class="callme__yellow__inner__forms__form">
+                            <input required type="text" name="callme_phone" class="callme__yellow__inner__forms__form__input" placeholder="8(___)___-__-__" pattern="[0-9]{10,11}" title="Введите номер телефона (без знака плюс)">
+                            <!--<label for="" class="callme__yellow__inner__forms__form__label">+7(___)___-__-__</label>-->
+                        </div>
+                    </div>
+                    <div class="callme__yellow__inner__text"><div class="callme__yellow__inner__text__content position__middle">Мы перезвоним Вам в течение дня</div></div>
+                    <div class="callme__yellow__inner__send"><div class="callme__yellow__inner__send__content"><button type="submit" class="callme__yellow__inner__send__content__button"><div class="callme__yellow__inner__send__content__button__text position__middle">Отправить</div></button></div></div>
+                </form>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="footer__empty"></div>
+        <div class="footer__gray">
+
+            <div class="footer__gray__content position__middle">
+
+                <div class="footer__gray__content__element"> <a href="authorization.php">© 2021 – 2022 Wismebel</a>
+                    <div class="footer__gray__content__element__inner footer__gray__content__element__inner_left position__middle">
+                        <div class="inner__first inner__first_left heading">WISMEBEL</div>
+                        <div class="inner__second inner__second_left">ООО “Wismebel”<br>ИНН 12345678<br>ОГРН 87654321</div>
+                    </div>
+                </div>
+
+                <div class="footer__gray__content__vline"></div>
+
+                <div class="footer__gray__content__element" id="width_hide">
+                    <div class="footer__gray__content__element__inner position__middle">
+                        <div class="inner__first"><img src="img/footer_2.png"></div>
+                        <div class="inner__second">kakaia-to_pochta@mail.su</div>
+                    </div>
+                </div>
+
+                <div class="footer__gray__content__vline"></div>
+
+                <div class="footer__gray__content__element">
+                    <div class="footer__gray__content__element__inner position__middle">
+                        <div class="inner__first"><img src="img/footer_3.png"></div>
+                        <div class="inner__second">+7 (902) 222-22-22</div>
+                    </div>
+                </div>
+
+                <div class="footer__gray__content__vline" id="width_hide"></div>
+
+                <div class="footer__gray__content__element" id="width_hide">
+                    <div class="footer__gray__content__element__inner position__middle">
+                        <div class="inner__first"><img src="img/footer_4.png"></div>
+                        <div class="inner__second">г. Ростов-на-Дону, ул. Кого-то, д. 2</div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </footer>
+
+</body>
+
+</html>

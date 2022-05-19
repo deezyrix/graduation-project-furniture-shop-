@@ -1,0 +1,511 @@
+/* !Обнуления */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+    color: #000 !important;
+  text-decoration: none
+  }
+body {
+    font-family: 'Nunito', sans-serif;
+    font-size: 2.45vh;
+    color: #000A1E;
+}
+@media screen and (min-aspect-ratio: 2/1){
+    body {font-size: 3vh;}
+}
+
+h1, h2, h3, h4, h5, h6, header, menu, main, footer {
+    margin: 0;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+/* |Обнуление кнопки */
+button {
+    padding: 0;
+    border: none;
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+    /* отображаем курсор в виде руки при наведении; некоторые
+    считают, что необходимо оставлять стрелочный вид для кнопок */
+    cursor: pointer;
+  }
+/* |Позиционирование */
+.position__middle {
+    position: absolute;               
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+/* |Заголовки */
+.heading {
+    font-size: 1.875vw; /* ЛУЧШЕ ПРИВЯЗАТЬ К ВЫСОТЕ! */
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+@media screen and (max-aspect-ratio: 1/1){
+    .heading {font-size: 8vw;}
+}
+/* |Скрытие элементов для узких экранов */
+@media screen and (max-aspect-ratio: 1/1){
+#width_hide {display: none;}
+}
+/* !Header-меню */
+/* Серая область */
+header {
+    position: absolute;
+
+    height: 15vh;
+    width: 100%;
+
+    background-color: rgba(196, 196, 196, 0.5);
+}
+/* Блок внутри области */
+.header__menu {
+    width: 85%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    font-weight: 600;
+    /*font-family: 'Nunito', sans-serif; (уже применено)*/
+}
+.header__menu__logo {
+    font-size: 3.6vh;
+}
+nav {
+   font-size: 2vh;
+}
+.header__menu__nav {
+    margin: 0 2vw; 
+
+    position: relative;
+}
+.header__menu__phone {
+    display: flex;    
+    position: relative;
+}
+.header__menu__phone__text {
+    font-size: 2vh;
+    margin-right: 2.135vw;
+}
+.header__menu__phone__img {
+    width: auto;
+    height: 2.4vh;
+
+    position: absolute;               
+    top: 50%;
+    left: 95%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+.header__menu__phone__img img {
+    /* width: 100%; (уже применено)*/
+    height: 100%;
+}
+/* Нижнее подчёркивание ссылок при наведении */
+.header__menu__nav:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 6px;
+    opacity: 0;
+
+    background-color: rgba(247, 233, 103, 0.44);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1;
+
+    transition: opacity 0.17s linear;
+}
+.header__menu__nav:hover:after, .header__menu__phone__text:hover:after {
+    opacity: 1;
+}
+/* Адаптация */
+/* Когда ширины мало */
+@media screen and (max-aspect-ratio: 100/68){ 
+    .header__menu__nav {margin: 0 1vw;}
+}
+@media screen and (max-aspect-ratio: 100/78){ 
+    .header__menu__nav {display: none;}
+    .header__menu__logo {font-size: 4.5vw;}
+    .header__menu__phone__text {font-size: 3.1vw; margin-left: -10%;}
+    .header__menu__phone__img {height: 3.4vh;}
+}
+/* Под мобильные экраны */
+@media screen and (max-aspect-ratio: 72/100){ 
+    .header__menu {width: 90%;}
+    .header__menu__logo {font-size: 4.5vw;}
+    .header__menu__phone__text {font-size: 3.7vw; margin-left: 0%;}
+    .header__menu__phone__img {display: none;}
+}
+
+/* !Заглавная картинка */
+.intro {
+    height: 100vh;
+    
+    background: url("../img/intro.jpg") center no-repeat;
+    background-size: cover;
+}
+/* !Блок "О нас" */
+.about {
+    height: 66.67vh;
+    display: flex;
+}
+.about__yellow {    
+    height: 100%;
+    width: 33.33%;
+
+    background-color: #F7E967;
+
+    position: relative;
+}
+
+.about__white {
+    height: 100%;
+    width: 66.67%;
+
+    background-color: #FFF;
+    position: relative;
+}
+.about__white__content {
+    width: 85%;
+    height: 60%;
+    
+}
+.about__white__content__head {
+    height: 37.5%;
+
+    display: flex; 
+}
+.about__white__content__text {
+    height: 62.5%;
+
+    display: flex;
+    align-items: flex-end;
+}
+/* Блоки в линию на узких экранах */
+@media screen and (max-aspect-ratio: 1/1){
+    .about {display: block; height: 100%;}
+    .about__yellow {width: 100%; height: 33.33vh;}
+    .about__white {width: 100%; height: 100vh;}
+    .about__white__content {height: 100%; text-align: center;}
+    .about__white__content__head {align-items: center;}
+    .about__white__content__text {align-items: center;} 
+}
+/*  !Блок "Продукция" */
+.production {
+    height: 100vh;
+    display: flex;
+}
+.production__goods {
+    width: 66.67%;
+    text-align: center;
+
+    position: relative;
+
+    background-color: #F0F0F0;
+}
+.production__goods__content {
+    height: 90%;
+    width: 90%;
+    
+}
+.production__goods__content__head {
+    height: 10%;
+    position: relative;
+    
+}
+.production__goods__content__goods {
+    height: 90%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    
+}
+.goods__block {
+    width: 24%;
+    height: 29.5%;
+    margin: 1%;
+    
+
+}
+.goods__block__image {
+    height: 90%;
+
+}
+.goods__block__image img {
+
+    max-width: 100%;
+    height: auto;
+    vertical-align: center;
+}
+.goods__block__text {
+    height: 10%;
+
+}
+/*  Картинка справа */
+.production__image {
+    width: 33.33%;
+
+    background: url("../img/intere-dizayn-belyy-kreslo.jpg") right no-repeat;
+    background-size: cover;
+}
+/* Параметры для узких экранов */
+@media screen and (max-aspect-ratio: 1/1){
+    .production {}
+    .goods__block {width: 42%; height: 16%;}
+    .production__goods {width: 80%;}
+    .production__goods__content {height: 95%;}
+    .production__image {width: 20%;}
+    .goods__block__image img {max-width: auto; height: 100%;}
+    .goods__block_9 {margin-left: auto;}
+    .goods__block__text {font-size: 1.9vh;}
+}
+/*  !Блок "Галерея" */
+.gallery {
+
+    background-color: rgb(255, 255, 255);
+}
+
+.gallery__sign {
+    height: 21.75vh;
+    position: relative;
+
+    background-color: #FFF;
+}
+.gallery__slider {
+   /*height: 32.9vh;*/
+   width: 95%;
+   margin: 0 2.5% 0 2.5%;
+
+    
+    background-size: auto 100%;
+}
+.gallery__button {
+    height: 16.67vh;
+
+    background-color: #FFF;
+}
+
+@media screen and (max-aspect-ratio: 1/1){
+    .gallery {}
+    .gallery__top {}
+    .gallery__sign {height: 33.33vh;}
+    /* .gallery__slider {height: 50vh;} */
+    .gallery__button {height: 16.67vh;}
+}
+/*  !Блок "Перезвоним" */
+.callme {
+    height: 66.66vh;
+    display: flex;
+}
+.callme__picture {
+    width: 33.33%;
+
+    background: url("../img/callback.png") right no-repeat;
+    background-size: cover;
+}
+.callme__yellow {
+    width: 66.67%;
+    position: relative;
+
+    background-color: #F7E967;
+}
+.callme__yellow__inner {
+    height: 75%;
+    width: 25vw;
+    text-align: center;
+
+}
+.callme__yellow__inner__head {
+    height: 30%;
+    position: relative;
+}
+.callme__yellow__inner__head__content {
+
+}
+/* Блок форм */
+.callme__yellow__inner__forms {
+    height: 30%;
+    
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+}
+
+.callme__yellow__inner__forms__form {
+    width: 100%;
+    height: 33.33%;
+
+}
+.separator {
+    height: 33.34%;
+
+}
+.callme__yellow__inner__forms__form__input {
+    height: 100%;
+    width: 100%;
+    font-size: 2vh;
+
+    border: 3px solid #F0F0F0;
+
+    background-color: #FFF;
+}
+.callme__yellow__inner__forms__form__input:hover {
+    border: 2px solid #F0F0F0;
+}
+/* Блок текста */
+.callme__yellow__inner__text {
+    height: 30%;
+    position: relative;
+    
+}
+.callme__yellow__inner__text__content {
+    
+}
+/* Блок кнопки */
+.callme__yellow__inner__send {
+    height: 10%;
+    
+}
+.callme__yellow__inner__send__content {
+    height: 100%;
+    width: 100%;
+
+}
+.callme__yellow__inner__send__content__button {
+    width: 33.33%;
+    height: 50%;
+    border-radius: 8.25px;
+    border: 0px;
+    position: relative;
+
+    background-color: #FFF;
+}
+.callme__yellow__inner__send__content__button__text {
+    width: 100%;
+    height: auto;
+    font-size: 1.343vh;
+    
+}
+/*  Адаптация */
+@media screen and (max-aspect-ratio: 1/1){
+    .callme__picture {width: 20%; background-position: center;}
+    .callme__yellow {width: 80%;}
+    .callme__yellow__inner {width: 50vw;}
+    .callme__yellow__inner__head__content {font-size: 5.6vw;}
+    .callme__yellow__inner__send__content__button {width: 100%; height: 100%;}
+}
+/*  !Блок "Footer" */
+footer {
+}
+/* Белая область */
+.footer__empty {
+    height: 16.67vh;
+    background-color: #FFF;
+}
+/* Серая область */
+.footer__gray {
+    height: 50vh;
+    background-color: #F0F0F0;
+
+    position: relative;
+}
+.footer__gray__content {
+    width: 85%;
+    height: 85%;
+    display: flex;
+    justify-content: space-evenly;
+    
+
+}
+.footer__gray__content__element {
+    font-size: 0.68vw; /* надпись (С)2021-2022 */
+    width: 100%;
+    position: relative;
+
+    display: grid;
+    align-items: end;
+}
+.footer__gray__content__element__inner {
+    width: 100%;
+    height: 33.3%;
+    text-align: center;
+    justify-self: space-between;
+
+}
+.inner__first {
+    height: 50%;
+    
+}
+.inner__first img {
+
+    max-height: 100%;
+    width: auto;
+    vertical-align: center;
+}
+.inner__second {
+    height: 50%;
+    font-weight: 600;
+    font-size: 0.97vw;
+
+    display: grid;
+    align-items: end;
+    
+}
+/* Настройка левого поля */
+.footer__gray__content__element__inner_left {
+    text-align: unset;
+    margin-left: 25%;
+}
+.inner__first_left {
+    height: 47.4%;
+}
+.inner__second_left {
+    height: 52.6%;
+    font-weight: 300;
+
+    
+}
+/* Настройка вертикальных линий */
+.footer__gray__content__vline {
+    height: 100%;
+    border-left: 1px solid #000A1E;
+}
+
+.footer__gray__content__element a:hover {
+    text-decoration: underline;
+}
+/* Адаптация */
+@media screen and (max-aspect-ratio: 1/1){
+    .footer__gray__content {width: 90%;}
+    .footer__gray__content__element__inner_left {text-align: center; margin-left: 0%;}
+    .inner__first_left {font-size: 6vw; display: grid; align-items: center;}
+    .inner__second {font-size: 3vw;}
+    .footer__gray__content__element {font-size: 2.5vw;}
+}
