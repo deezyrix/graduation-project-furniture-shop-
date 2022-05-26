@@ -2,23 +2,19 @@
 //Подключаемся к БД
 include "connect.php";
 
-
 //Запрос на удаление
 if (isset($_GET['del'])) {
     $id = $_GET['del'];
 
-    mysqli_multi_query($db,
-    "INSERT INTO applications_deleted (application_id, application_name, application_phone, application_date, removed_at) 
-    SELECT application_id, application_name, application_phone, application_date, NOW() FROM applications WHERE application_id=$id; 
-    DELETE FROM applications WHERE application_id=$id") 
+    mysqli_query($db,
+    "DELETE FROM applications_deleted WHERE application_id=$id") 
     or die(mysqli_error($db));
-    header("location:table.php");
+    header("location:removed.php");
     die();
 }
 
-
 //Берём данные
-$select="SELECT * FROM applications";
+$select="SELECT * FROM applications_deleted";
 $query=mysqli_query($db,$select);
 
 ?>
@@ -34,7 +30,7 @@ $query=mysqli_query($db,$select);
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;600;700&family=Poppins:wght@600&display=swap" rel="stylesheet">
-    <title>Заявки</title>
+    <title>Удалённые заявки</title>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 </head>
 
@@ -47,7 +43,7 @@ $query=mysqli_query($db,$select);
             
             <nav>
             <a class="header__menu__nav" href="password.php">ПАРОЛЬ</a> 
-            <a class="header__menu__nav" href="removed.php">ИСТОРИЯ</a> 
+            <a class="header__menu__nav" href="table.php">ЗАЯВКИ</a> 
                 
             </nav>     
             <nav><a class="header__menu__nav" href="exit.php">ВЫХОД</a> </nav>                
@@ -65,9 +61,9 @@ $query=mysqli_query($db,$select);
     <main>
         <div class="margintop"></div>
         <div class="callme">
-            <div class="callme__picture"><div class="position__middle"><img src="img/headerphone.png"></div></div>
+            <div class="callme__picture"><div class="position__middle"><img src="img/log.png"></div></div>
             <div class="callme__yellow"><p class="position__middle span">ВЫ НЕ АВТОРИЗОВАНЫ!<br><a href='authorization.php'>авторизация</a></p></div>
-            <div class="callme__picture" id="width_hide"><div class="position__middle"><img src="img/headerphone.png"></div></div>
+            <div class="callme__picture" id="width_hide"><div class="position__middle"><img src="img/log.png"></div></div>
         </div>
     </main>
 
@@ -76,7 +72,7 @@ $query=mysqli_query($db,$select);
     <main>
         <div class="margintop"></div>
         <div class="callme">
-            <div class="callme__picture" id="width_hide"><div class="position__middle"><img src="img/headerphone.png"></div></div>
+            <div class="callme__picture" id="width_hide"><div class="position__middle"><img src="img/log.png"></div></div>
             
             <div class="callme__yellow">
                 <div class="callme__yellow__table position__middle">
@@ -87,7 +83,8 @@ $query=mysqli_query($db,$select);
                                 <th>Имя</th>
                                 <th>Телефон</th>
                                 <th>Дата подачи</th>
-                                <th>Удалить</th>
+                                <th>Дата удаления</th>
+                                <th>Стереть</th>
                             </tr>
                             <?php 
                                 $num=mysqli_num_rows($query);
@@ -95,12 +92,15 @@ $query=mysqli_query($db,$select);
                                     while ($result=mysqli_fetch_assoc($query)) {
                                         echo "
                                             <tr>
+                                                
+
                                                 <td>".$result['application_id']."</td>
                                                 <td>".$result['application_name']."</td>
                                                 <td>".$result['application_phone']."</td>
                                                 <td>".$result['application_date']."</td>
+                                                <td>".$result['removed_at']."</td>
                                                 <td>
-                                                    <a href='?del=".$result['application_id']."' >❎</a>
+                                                    <a href='?del=".$result['application_id']."' >❌</a>
                                                 </td>
                                             </tr>
                                         ";
@@ -112,7 +112,7 @@ $query=mysqli_query($db,$select);
                 </div>
             </div>
 
-            <div class="callme__picture"><div class="position__middle"><img src="img/headerphone.png"></div></div>
+            <div class="callme__picture"><div class="position__middle"><img src="img/log.png"></div></div>
         </div>
     </main>
 

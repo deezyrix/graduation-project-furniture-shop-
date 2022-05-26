@@ -17,9 +17,13 @@ dd {
   padding: 0;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 a {
     color: #000 !important;
-  text-decoration: none
+    text-decoration: none
   }
 body {
     font-family: 'Nunito', sans-serif;
@@ -165,10 +169,14 @@ nav {
 
 /* !Заглавная картинка */
 .intro {
+    
     height: 100vh;
     
     background: url("../img/intro.jpg") center no-repeat;
     background-size: cover;
+}
+.intro__logo img {
+    border: 2px solid #000A1E;
 }
 /* !Блок "О нас" */
 .about {
@@ -247,11 +255,16 @@ nav {
     
 }
 .goods__block {
+    display: block;
+
     width: 24%;
     height: 29.5%;
     margin: 1%;
+}
+.goods__block:hover {
+    text-decoration: underline;
+    width: 24.5%;
     
-
 }
 .goods__block__image {
     height: 90%;
@@ -304,6 +317,46 @@ nav {
 
     
     background-size: auto 100%;
+}
+.gallery__slider__wrap {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+}
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 15px;
+    margin-top: -45px;
+    font-weight: bold;
+    font-size: 45px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+}
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+.prev:hover, .next:hover {
+    background-color: rgba(240,240,240,0.5);
+}
+.gallery__button__dots {
+    text-align: center;
+}
+.dot {
+    cursor: pointer;
+    height: 13px;
+    width: 13px;
+    margin: 0 2px;
+    background-color: #F0F0F0;
+    border-radius: 50%;
+    display: inline-block;
+    transition: 0.6s ease;
+}
+.active, .dot:hover {
+    background-color: #b4b4b4;
 }
 .gallery__button {
     height: 16.67vh;
@@ -412,6 +465,9 @@ nav {
     height: auto;
     font-size: 1.343vh;
     
+}
+.callme__yellow__inner__send__content__button:hover {
+    background-color: #F0F0F0;
 }
 /*  Адаптация */
 @media screen and (max-aspect-ratio: 1/1){

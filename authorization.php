@@ -18,7 +18,7 @@
     <header>
 
         <div class="header__menu position__middle">
-            <div class="header__menu__logo">W I S M E B E L</div>
+            <div class="header__menu__logo">W I N  W I N S</div>
             
             <nav>
                 <a class="header__menu__nav" href="index.html">НА ГЛАВНУЮ</a>

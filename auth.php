@@ -17,7 +17,7 @@
     $manager_pass = $_POST['manager_pass'];
 
     // Подключаемся к БД
-    include('connect_callme.php');
+    include('connect.php');
 
 
     // Выбор юзера в соответствии с введёнными данными
