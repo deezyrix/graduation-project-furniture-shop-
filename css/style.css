@@ -50,8 +50,7 @@ button {
     font: inherit;
     color: inherit;
     background-color: transparent;
-    /* отображаем курсор в виде руки при наведении; некоторые
-    считают, что необходимо оставлять стрелочный вид для кнопок */
+    /* отображаем курсор в виде руки при наведении */
     cursor: pointer;
   }
 /* |Позиционирование */
@@ -80,7 +79,7 @@ button {
 header {
     position: absolute;
 
-    height: 15vh;
+    height: 10vh;
     width: 100%;
 
     background-color: rgba(196, 196, 196, 0.5);
@@ -174,9 +173,24 @@ nav {
     
     background: url("../img/intro.jpg") center no-repeat;
     background-size: cover;
+    display: flex;
+    flex-direction: column;
+}
+.intro__scrolldown {
+    top: 85%;
+    display: block;
+    
 }
 .intro__logo img {
     border: 2px solid #000A1E;
+    width: 40vh;
+}
+.intro__scrolldown img {
+    height: 7vh;
+}
+@media screen and (max-aspect-ratio: 100/68){
+    .intro__logo img {width: 60vw;}
+    .intro__scrolldown {}
 }
 /* !Блок "О нас" */
 .about {
@@ -218,7 +232,7 @@ nav {
 /* Блоки в линию на узких экранах */
 @media screen and (max-aspect-ratio: 1/1){
     .about {display: block; height: 100%;}
-    .about__yellow {width: 100%; height: 33.33vh;}
+    .about__yellow {display: none;}
     .about__white {width: 100%; height: 100vh;}
     .about__white__content {height: 100%; text-align: center;}
     .about__white__content__head {align-items: center;}
@@ -264,7 +278,10 @@ nav {
 .goods__block:hover {
     text-decoration: underline;
     width: 24.5%;
-    
+    transition: 0.17s;
+}
+.goods__block:not(:hover) {
+    transition: 0.17s;
 }
 .goods__block__image {
     height: 90%;
@@ -291,9 +308,10 @@ nav {
 @media screen and (max-aspect-ratio: 1/1){
     .production {}
     .goods__block {width: 42%; height: 16%;}
-    .production__goods {width: 80%;}
+    .goods__block:hover {text-decoration: none; width: 42%;}
+    .production__goods {width: 85%;}
     .production__goods__content {height: 95%;}
-    .production__image {width: 20%;}
+    .production__image {width: 15%;}
     .goods__block__image img {max-width: auto; height: 100%;}
     .goods__block_9 {margin-left: auto;}
     .goods__block__text {font-size: 1.9vh;}
@@ -369,7 +387,7 @@ nav {
     .gallery__top {}
     .gallery__sign {height: 33.33vh;}
     /* .gallery__slider {height: 50vh;} */
-    .gallery__button {height: 16.67vh;}
+    .gallery__button {height: 10vh;}
 }
 /*  !Блок "Перезвоним" */
 .callme {
@@ -471,11 +489,14 @@ nav {
 }
 /*  Адаптация */
 @media screen and (max-aspect-ratio: 1/1){
-    .callme__picture {width: 20%; background-position: center;}
-    .callme__yellow {width: 80%;}
+    .callme {height: 80vh;}
+    .callme__picture {width: 15%; background-position: center;}
+    .callme__yellow {width: 85%;}
     .callme__yellow__inner {width: 50vw;}
     .callme__yellow__inner__head__content {font-size: 5.6vw;}
+    .callme__yellow__inner__text__content {font-size: 3.8vw; font-weight: 600;}
     .callme__yellow__inner__send__content__button {width: 100%; height: 100%;}
+    .callme__yellow__inner__send__content__button__text {font-size: 5vw;}
 }
 /*  !Блок "Footer" */
 footer {
@@ -559,6 +580,7 @@ footer {
 }
 /* Адаптация */
 @media screen and (max-aspect-ratio: 1/1){
+    .footer__empty {height: 10vh;}
     .footer__gray__content {width: 90%;}
     .footer__gray__content__element__inner_left {text-align: center; margin-left: 0%;}
     .inner__first_left {font-size: 6vw; display: grid; align-items: center;}

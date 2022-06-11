@@ -37,7 +37,7 @@ echo '<script language="javascript">';
 if($result='TRUE')
 ob_start();
 echo 'alert("Спасибо! Мы свяжемся с вами в течение дня.")';
-header('Refresh: 0; URL=http://diplomniysait2/#scroll-4');
+header('Refresh: 0; URL=/#scroll-4');
 ob_end_flush();
 
 echo '</script>';

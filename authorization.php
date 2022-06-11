@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="icon" type="image/png" sizes="32x32" href="img/icon.png">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/authorization.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;600;700&family=Poppins:wght@600&display=swap" rel="stylesheet">
@@ -18,7 +19,7 @@
     <header>
 
         <div class="header__menu position__middle">
-            <div class="header__menu__logo">W I N  W I N S</div>
+            <div class="header__menu__logo"><a href="/">W I N  W I N S</a></div>
             
             <nav>
                 <a class="header__menu__nav" href="index.html">НА ГЛАВНУЮ</a>
@@ -76,25 +77,7 @@
 
 
     <style>
-        /* Предотвращение хайда ссылки "На главную" */
-        .header__menu__nav {display: block;}
-        /* Замена бэкграунта "На главную" */
         .intro {height: 100vh; background: url("img/authorization.jpg") center no-repeat; background-size: cover;}
-        /* Отступ */
-        .margintop {height: 24.2vh;}
-        /* Размер блока */
-        .callme {}
-        /* Перекраска левого блока */
-        .about__yellow {background-color: #FFF;}
-        /* Центрирование в блоке */
-        .about__yellow__content {text-align: center;}
-        /* Подчёркивание ссылки */
-        .about__yellow__content a {font-style: italic;}
-        .about__yellow__content a:hover {text-decoration: underline}
-        
-        @media screen and (max-aspect-ratio: 1/1){
-            .about__yellow {display: none;}
-            .callme__yellow {width: 100%;}
         }
     </style>
 </body>

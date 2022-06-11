@@ -27,6 +27,7 @@ $query=mysqli_query($db,$select);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="icon" type="image/png" sizes="32x32" href="img/icon.png">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/removed.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;600;700&family=Poppins:wght@600&display=swap" rel="stylesheet">
@@ -39,7 +40,7 @@ $query=mysqli_query($db,$select);
     <header>
 
         <div class="header__menu position__middle">
-            <div class="header__menu__logo">W I N  W I N S</div>
+            <div class="header__menu__logo"><a href="/">W I N  W I N S</a></div>
             
             <nav>
             <a class="header__menu__nav" href="password.php">ПАРОЛЬ</a> 
@@ -123,33 +124,7 @@ $query=mysqli_query($db,$select);
 
 
     <style>
-        /* Стилизация таблицы */
-        .callme__yellow {position: relative;}
-        .callme__yellow__table {width: 95%; max-height: 95%; background-color: #FFF; overflow-y: auto; border: 1px solid;}
-        .callme_yellow__table__content {width:100%; height: auto; background: #FFF; align-items: center;}
-        table {width: 100%; border-collapse: collapse;}
-        table td {padding: 10px; text-align: center;}
-
-        /* Предотвращение хайда ссылки "На главную" */
-        .header__menu__nav {display: inline;}
-        /* Замена бэкграунта "На главную" */
         .intro {height: 100vh; background: url("img/table.jpg") center no-repeat; background-size: cover;}
-        .margintop {height: 24.2vh;}
-        /* Боковые блоки */
-        .callme__picture {position: relative; width: 16.66%; background: #FFF; background-size: cover;}
-        /* Центральный блок */
-        .callme__yellow {width: 66.67%;}
-        /* Боковые картинки */
-        .callme__picture img {max-width: 90%; margin-left: 5%;height: auto;}
-        /* Ссылка на страницу авторизации */
-        .span {background-color: #F7E967; font-size: 50px; text-align: center; font-weight: 600;}
-        .span a {font-style: italic;}
-        .span a:hover {text-decoration: underline;}
-        @media screen and (max-aspect-ratio: 1/1){
-            .callme__picture {width: 25%;}
-            .callme__yellow {width: 75%;}
-            .header__menu__logo {display: none;}
-        }
     </style>
 </body>
 

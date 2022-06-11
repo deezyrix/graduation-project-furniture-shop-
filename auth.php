@@ -31,7 +31,7 @@
 
         ob_start();
         echo 'alert("Неверная комбинация логина/пароля.")';
-        header('Refresh: 0; URL=http://diplomniysait2/authorization.php');
+        header('Refresh: 0; URL=/authorization.php');
         ob_end_flush();
         
         echo '</script>';
@@ -42,8 +42,8 @@
 
     $db->close();
     
-    header('Refresh: 0; URL=http://diplomniysait2/table.php');
+    header('Refresh: 0; URL=/table.php');
 }
 
     
-?> 
+?>

@@ -27,5 +27,5 @@
 
     setcookie('user', $user['manager_login'], time() + 3600, "/");
 
-    header('Refresh: 0; URL=http://diplomniysait2/');
+    header('Refresh: 0; URL=/');
 ?>
