@@ -1,0 +1,75 @@
+        /* Стилизация */
+header {
+    
+}
+        /* Предотвращение хайда ссылки "На главную" */
+.header__menu__nav {
+    display: inline;
+}
+main {
+    background-color: rgba(247, 233, 103, 0.95);
+    margin-top: 10vh;
+}
+.goods {
+    min-height: 90vh;
+       
+}
+.goods__wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    
+    width: 100%;
+    
+}  
+.goods__card {
+    display: flex;
+    flex-direction: column;
+    background-color: #FFF;
+    width: 20.8vw;
+    border-radius: 8.25px;
+    padding: 20px;
+    box-shadow: 10px 10px 40px #000A1E;
+    margin: 8% 1.7%;
+    
+}
+.goods__card__image {
+    
+}
+.goods__card__image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8.25px;
+}
+.goods__card__text2 {
+    font-weight: 600;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.goods__card__text3 {
+    flex-grow: 1;
+    margin-top: 20px;
+    font-size: 1vw;
+    text-align: justify;
+}
+.goods__card__text4 {
+    
+    font-weight: 600;
+    font-size: 1vw;
+    text-align: right;
+    margin-top: 20px;
+}
+/* .goods {
+
+    border: 2px solid #1757d6;
+} */
+    
+@media screen and (max-aspect-ratio: 1/1){
+body {font-size: 2vh;}
+.goods__wrap {margin: 5% 0% 5% 0%;}
+.goods__card {width: 600px;}
+.goods__card__text2 {font-size: 3.8vw;}
+.goods__card__text3 {font-size: 3vw;}
+.goods__card__text4 {margin-top: 20px; font-size: 3vw;}
+}
